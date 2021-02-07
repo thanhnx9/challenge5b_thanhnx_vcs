@@ -7,7 +7,7 @@
         <th>Phone</th>
         <th>Email</th>
 {{--        <th>Image</th>--}}
-        <th>Role Id</th>
+        <th>User Type</th>
                 @if(Auth::user()->role_id<3)
                     <th colspan="3">Action</th>
                 @endif
@@ -21,7 +21,7 @@
             <td>{{ $users->phone }}</td>
             <td>{{ $users->email }}</td>
 {{--            <td>{{ $users->image }}</td>--}}
-            <td>{{ $users->role_id }}</td>
+            <td>Student</td>
                 @if(Auth::user()->role_id<3)
                     <td>
                         {!! Form::open(['route' => ['users.destroy', $users->id], 'method' => 'delete']) !!}

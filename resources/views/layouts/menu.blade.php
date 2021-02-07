@@ -7,7 +7,7 @@
 </li>
 
 
-@if(Auth::user()->role_id<3)
+@if(Auth::user()->role_id<2)
 <li class="treeview">
     <a href="#">
         <i class="fa fa-dashboard"></i>

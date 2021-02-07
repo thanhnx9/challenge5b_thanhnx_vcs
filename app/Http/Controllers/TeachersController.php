@@ -129,11 +129,14 @@ class TeachersController extends AppBaseController
         }
         if(@Auth::user()->role_id<3) {
             //return 'Day la Student';
-//            $users->username=$request->username;
-//            $users->phone=$request->phone;
-//            $users->email=$request->email;
-            //$users->password=$users->password;
-            $users = $this->usersRepository->update($request->all(), $id);
+            $data['userName']=$request->userName;
+            $data['name']=$request->name;
+            $data['phone']=$request->phone;
+            $data['email']=$request->email;
+            $data['role_id']='2';
+            $data['password']=Hash::make($request->password);
+            $data = $this->usersRepository->update($data, $id);
+          //  $users = $this->usersRepository->update($request->all(), $id);
             Flash::success('Teachers updated successfully.');
             return redirect(route('teachers.index'));
         }

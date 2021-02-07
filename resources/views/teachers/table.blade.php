@@ -7,8 +7,8 @@
         <th>Phone</th>
         <th>Email</th>
 {{--        <th>Image</th>--}}
-        <th>Role Id</th>
-                @if(Auth::user()->role_id<3)
+        <th>User Type</th>
+                @if(Auth::user()->role_id<2)
                     <th colspan="3">Action</th>
                 @endif
             </tr>
@@ -21,8 +21,8 @@
             <td>{{ $teachers->phone }}</td>
             <td>{{ $teachers->email }}</td>
 {{--            <td>{{ $users->image }}</td>--}}
-            <td>{{ $teachers->role_id }}</td>
-                @if(Auth::user()->role_id<3)
+            <td>Teacher</td>
+                @if(Auth::user()->role_id<2)
                     <td>
                         {!! Form::open(['route' => ['teachers.destroy', $teachers->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
