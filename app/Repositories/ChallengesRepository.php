@@ -2,23 +2,26 @@
 
 namespace App\Repositories;
 
+use App\Models\Challenges;
 use App\Models\Classes;
+use App\Models\Messages;
 use App\Repositories\BaseRepository;
 
 /**
  * Class ClassesRepository
  * @package App\Repositories
  * @version February 5, 2021, 6:30 pm UTC
-*/
+ */
 
-class ClassesRepository extends BaseRepository
+class ChallengesRepository extends BaseRepository
 {
     /**
      * @var array
      */
     protected $fieldSearchable = [
-        'class_name',
-        'class_code'
+        'name',
+        'filename',
+        'suggest'
     ];
 
     /**
@@ -36,6 +39,10 @@ class ClassesRepository extends BaseRepository
      **/
     public function model()
     {
-        return Classes::class;
+        return Challenges::class;
+    }
+    public function getChallenge($name){
+        return Challenges::where(['filename' => $name])->orderBy('created_at', 'asc')->first();
+        // return Messages::where('sender',$name)->get();
     }
 }

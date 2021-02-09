@@ -25,6 +25,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('users', App\Http\Controllers\UsersController::class);
     Route::resource('profile', App\Http\Controllers\ProfileController::class);
     Route::resource('teachers', App\Http\Controllers\TeachersController::class);
+    /******Roles*******/
+    Route::resource('roles', App\Http\Controllers\RolesController::class);
 
     /******Everything do with messages*****/
     Route::get('messages/{receiver_id}', 'App\Http\Controllers\MessagesController@create')->name('messages');
@@ -43,8 +45,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('solution/store/{task_id}', 'App\Http\Controllers\SolutionController@store')->name('storeSolution');
     Route::get('solution', 'App\Http\Controllers\SolutionController@index')->name('solutions');
     Route::get('solution/download/{file}', 'App\Http\Controllers\SolutionController@downloadSolution')->name('downloadSolution');
-    /******Roles*******/
-    Route::resource('roles', App\Http\Controllers\RolesController::class);
+
+    /************Challenges**************/
+    Route::get('challenges', 'App\Http\Controllers\ChallengesController@index')->name('challenges');
+    Route::get('challenge/create', 'App\Http\Controllers\ChallengesController@create')->name('createChallenge');
+    Route::post('challenge/store', 'App\Http\Controllers\ChallengesController@store')->name('storeChallenge');
+    Route::post('challenge/answer/{folder}', 'App\Http\Controllers\ChallengesController@checkAnswer')->name('checkAnswer');
 
 
 });

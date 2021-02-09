@@ -17,7 +17,7 @@
 </li>
 @endif
 <li class="{{ Request::is('user*') ? 'active' : '' }}">
-    <a href="#"><i class="fa fa-gamepad"></i><span>Challenges</span></a>
+    <a href="{{route('challenges')}}"><i class="fa fa-gamepad"></i><span>Challenges</span></a>
 </li>
 @if(Auth::user()->role_id<2)
 <li class="treeview">

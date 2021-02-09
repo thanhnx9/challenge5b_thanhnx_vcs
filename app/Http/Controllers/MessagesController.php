@@ -48,9 +48,7 @@ class MessagesController extends Controller
 //        //Chuc nang nhan tin.
 //        if(session('check')=='inbox')
 //        {
-        echo 'xxx';
         $receiver_data= $this->usersRepository->getuserbyUserid($receiver_id);
-        echo $receiver_data;
         $dataInsert = array(
             'receiver' => $receiver_data->userName,
             'sender' => Auth::user()->userName,

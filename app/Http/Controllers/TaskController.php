@@ -7,10 +7,6 @@ use App\Repositories\UsersRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
-use Illuminate\Pagination\Paginator;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
 use Laracasts\Flash\Flash;
 use Session;
 
@@ -28,11 +24,6 @@ class TaskController extends Controller
         return view('tasks.index')->with('tasks',$tasks);
     }
 
-//    //Submit solution/answer
-//    public function submit()
-//    {
-//        return view('Assignment.submit_solution');
-//    }
 
     public function store(Request $request)
     {
