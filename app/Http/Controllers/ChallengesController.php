@@ -70,7 +70,7 @@ class ChallengesController extends Controller
     public function checkAnswer(Request $request, $folder)
     {
         $answer = $request->get('answer').'.txt';
-        $dir = 'uploads/challenge/'.$folder.'/';
+        $dir = 'uploads/challenges/'.$folder.'/';
         $filename = $dir.$answer;
         if(File::exists($filename))
         {
