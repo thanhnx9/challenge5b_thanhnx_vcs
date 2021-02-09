@@ -11,6 +11,11 @@
 <li class="{{ Request::is('user*') ? 'active' : '' }}">
     <a href="{{route('tasks')}}"><i class="fa fa-file"></i><span>Exams</span></a>
 </li>
+@if(Auth::user()->role_id<3)
+<li class="{{ Request::is('user*') ? 'active' : '' }}">
+    <a href="{{route('solutions')}}"><i class="fa fa-file-o"></i><span>Solution</span></a>
+</li>
+@endif
 <li class="{{ Request::is('user*') ? 'active' : '' }}">
     <a href="#"><i class="fa fa-gamepad"></i><span>Challenges</span></a>
 </li>

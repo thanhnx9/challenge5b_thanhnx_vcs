@@ -40,4 +40,7 @@ class TaskRepository extends BaseRepository
     {
         return Task::class;
     }
+    public function getTaskwithTaskid($task_id){
+        return Task::where(['id' => $task_id])->orderBy('created_at', 'asc')->first();
+    }
 }

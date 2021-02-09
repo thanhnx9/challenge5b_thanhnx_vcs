@@ -19,7 +19,7 @@ class Solution extends Model
 
     use HasFactory;
 
-    public $table = 'task';
+    public $table = 'solution';
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
@@ -29,7 +29,7 @@ class Solution extends Model
 
 
     public $fillable = [
-        'name', 'task_id', 'student_name'
+        'name', 'task_name', 'student_name'
     ];
 
     /**
@@ -39,8 +39,8 @@ class Solution extends Model
      */
     protected $casts = [
         'name' => 'string',
-        'task_id'=>'integer',
-        'student_name'=>'integer',
+        'task_name'=>'string',
+        'student_name'=>'string',
     ];
 
     /**
@@ -50,7 +50,7 @@ class Solution extends Model
      */
     public static $rules = [
         'name' => 'required|string|max:255',
-        'task_id'=>'integer',
+        'task_name'=>'nullable|string|max:255',
         'student_name'=>'nullable|string|max:255',
         'deleted_at' => 'nullable',
         'created_at' => 'nullable',

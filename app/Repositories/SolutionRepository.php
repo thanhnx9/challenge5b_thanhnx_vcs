@@ -21,7 +21,7 @@ class SolutionRepository extends BaseRepository
      */
     protected $fieldSearchable = [
         'name',
-        'task_id',
+        'task_name',
         'student_name'
     ];
 
@@ -42,4 +42,5 @@ class SolutionRepository extends BaseRepository
     {
         return Solution::class;
     }
+
 }

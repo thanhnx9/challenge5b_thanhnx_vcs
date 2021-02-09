@@ -37,6 +37,12 @@ Route::group(['middleware' => 'auth'], function () {
     /*******Task******/
     Route::get('tasks', 'App\Http\Controllers\TaskController@index')->name('tasks');
     Route::post('tasks/store', 'App\Http\Controllers\TaskController@store')->name('storeTask');
+    Route::get('tasks/download/{file}', 'App\Http\Controllers\TaskController@download')->name('downloadTask');
+    /*********Solutions***/
+    Route::get('task/submit/{task_id}', 'App\Http\Controllers\SolutionController@submit')->name('submitSolution');
+    Route::post('solution/store/{task_id}', 'App\Http\Controllers\SolutionController@store')->name('storeSolution');
+    Route::get('solution', 'App\Http\Controllers\SolutionController@index')->name('solutions');
+    Route::get('solution/download/{file}', 'App\Http\Controllers\SolutionController@downloadSolution')->name('downloadSolution');
     /******Roles*******/
     Route::resource('roles', App\Http\Controllers\RolesController::class);
 

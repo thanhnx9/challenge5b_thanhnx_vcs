@@ -79,20 +79,13 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-//        $this->validate($request,[
-//            "name"    => "required",
-//            "email"  => "required|email"
-//        ]);
-
         $users = Auth::user();
 
-      //  $data['name'] = $request->name;
-       // $data['userName'] = $request->userName;
         $data['phone']= $request->phone;
         $data['email'] = $request->email;
-        if ( $request->has('password')  ) {
-            $data['password'] = bcrypt($request->password);
-        }
+//        if ( $request->has('password')  ) {
+//            $data['password'] = bcrypt($request->password);
+//        }
         if ( $request->hasFile('image')  ) {
             $avatar = $request->image;
             $avatar_new_name = time().$avatar->getClientOriginalName();

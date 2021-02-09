@@ -31,13 +31,6 @@ class UsersController extends AppBaseController
      */
     public function index(Request $request)
     {
-//        if(Auth::user()->role_id<3) {    //if user is admin or teacher => show all
-//            $users = $this->usersRepository->all();
-//
-//            return view('users.index')
-//                ->with('users', $users);
-//        }
-//        elseif(Auth::user()->role_id==3){
             //Get student list
             $users = $this->usersRepository->getuserbyRoleid(3);
             return view('users.index')

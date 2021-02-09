@@ -20,10 +20,10 @@
     <label for="email">Email</label>
     <input type="email" class="form-control" name="email"  value="{{$users->email}}">
 </div>
-<div class="form-group col-sm-6">
-    <label for="password">Password</label>
-    <input type="text" class="form-control" name="password" >
-</div>
+{{--<div class="form-group col-sm-6">--}}
+{{--    <label for="password">Password</label>--}}
+{{--    <input type="text" class="form-control" name="password" >--}}
+{{--</div>--}}
 <div class="form-group col-sm-6">
     <button type="submit" class="btn btn-primary">Update</button>
     <a href="{{ route('profile.index') }}" class="btn btn-default">Cancel</a>

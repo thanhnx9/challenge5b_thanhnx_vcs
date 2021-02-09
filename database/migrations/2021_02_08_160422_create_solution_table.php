@@ -16,7 +16,7 @@ class CreateSolutionTable extends Migration
         Schema::create('solution', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('task_id');
+            $table->string('task_name');
             $table->string('student_name');
             $table->softDeletes();
             $table->timestamps();
