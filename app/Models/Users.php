@@ -5,6 +5,7 @@ namespace App\Models;
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 /**
  * Class Users
@@ -21,7 +22,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property string $password
  * @property string $remember_token
  */
-class Users extends Model
+class Users extends Authenticatable
 {
     use SoftDeletes;
 

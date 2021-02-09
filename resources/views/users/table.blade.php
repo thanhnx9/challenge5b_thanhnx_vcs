@@ -22,17 +22,18 @@
             <td>{{ $users->email }}</td>
 {{--            <td>{{ $users->image }}</td>--}}
             <td>Student</td>
-                @if(Auth::user()->role_id<3)
+
                     <td>
                         {!! Form::open(['route' => ['users.destroy', $users->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
                             <a href="{{ route('users.show', [$users->id]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
+                            @if(Auth::user()->role_id<3)
                             <a href="{{ route('users.edit', [$users->id]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
                             {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                            @endif
                         </div>
                         {!! Form::close() !!}
                     </td>
-                @endif
             </tr>
         @endforeach
         </tbody>

@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Models\Task;
 use App\Models\Users;
 use App\Repositories\BaseRepository;
 use Illuminate\Support\Facades\DB;
@@ -10,23 +11,16 @@ use Illuminate\Support\Facades\DB;
  * Class UsersRepository
  * @package App\Repositories
  * @version February 6, 2021, 3:08 am UTC
-*/
+ */
 
-class UsersRepository extends BaseRepository
+class TaskRepository extends BaseRepository
 {
     /**
      * @var array
      */
     protected $fieldSearchable = [
-        'userName',
         'name',
-        'phone',
-        'email',
-        'image',
-        'role_id',
-        'email_verified_at',
-        'password',
-        'remember_token'
+        'teacher_name'
     ];
 
     /**
@@ -44,13 +38,6 @@ class UsersRepository extends BaseRepository
      **/
     public function model()
     {
-        return Users::class;
-    }
-
-    public function getuserbyRoleid($role_id){
-        return Users::where(['role_id' => $role_id])->orderBy('name', 'asc')->get();
-    }
-    public function getuserbyUserid($user_id){
-        return Users::where(['id' => $user_id])->orderBy('name', 'asc')->first();
+        return Task::class;
     }
 }

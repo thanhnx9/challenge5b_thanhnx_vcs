@@ -4,7 +4,6 @@ php:
     - no_unused_imports
   finder:
     not-name:
-      - index.php
       - server.php
 js:
   finder:

@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Models\Users;
+use App\Models\Messages;
 use App\Repositories\BaseRepository;
 use Illuminate\Support\Facades\DB;
 
@@ -10,23 +10,18 @@ use Illuminate\Support\Facades\DB;
  * Class UsersRepository
  * @package App\Repositories
  * @version February 6, 2021, 3:08 am UTC
-*/
+ */
 
-class UsersRepository extends BaseRepository
+class MessagesRepository extends BaseRepository
 {
     /**
      * @var array
      */
     protected $fieldSearchable = [
-        'userName',
-        'name',
-        'phone',
-        'email',
-        'image',
-        'role_id',
-        'email_verified_at',
-        'password',
-        'remember_token'
+        'id',
+        'sender',
+        'receiver',
+        'message',
     ];
 
     /**
@@ -44,13 +39,10 @@ class UsersRepository extends BaseRepository
      **/
     public function model()
     {
-        return Users::class;
+        return Messages::class;
     }
-
-    public function getuserbyRoleid($role_id){
-        return Users::where(['role_id' => $role_id])->orderBy('name', 'asc')->get();
-    }
-    public function getuserbyUserid($user_id){
-        return Users::where(['id' => $user_id])->orderBy('name', 'asc')->first();
+    public function getSentMessage($name){
+        return Messages::where(['sender' => $name])->orderBy('created_at', 'asc')->get();
+       // return Messages::where('sender',$name)->get();
     }
 }

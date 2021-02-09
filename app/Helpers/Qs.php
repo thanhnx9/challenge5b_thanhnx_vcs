@@ -133,11 +133,6 @@ class Qs
         return $dataFile;
     }
 
-    public static function generateUserCode()
-    {
-        return substr(uniqid(mt_rand()), -7, 7);
-    }
-
     public static function formatBytes($size, $precision = 2)
     {
         $base = log($size, 1024);

@@ -12,6 +12,8 @@
                 <div class="row" style="padding-left: 20px">
                     @include('users.show_fields')
                     <a href="{{ route('users.index') }}" class="btn btn-default">Back</a>
+                    <button class="btn btn-warning" onclick="window.location='{{ url("messages/"."{$users->id}") }}'"> Send Message</button>
+{{--                    <a href="{{url('messages/create/'.'$users->id'}}" class="btn btn-default">Send message</a>--}}
                 </div>
             </div>
         </div>

@@ -5,8 +5,15 @@
 <li class="{{ Request::is('users*') ? 'active' : '' }}">
     <a href="{{ route('teachers.index') }}"><i class="fa fa-user-circle"></i><span>Teachers</span></a>
 </li>
-
-
+<li class="{{ Request::is('users*') ? 'active' : '' }}">
+    <a href="{{route('outbox')}}"><i class="fa fa-envelope"></i><span>Messages</span></a>
+</li>
+<li class="{{ Request::is('user*') ? 'active' : '' }}">
+    <a href="{{route('tasks')}}"><i class="fa fa-file"></i><span>Exams</span></a>
+</li>
+<li class="{{ Request::is('user*') ? 'active' : '' }}">
+    <a href="#"><i class="fa fa-gamepad"></i><span>Challenges</span></a>
+</li>
 @if(Auth::user()->role_id<2)
 <li class="treeview">
     <a href="#">

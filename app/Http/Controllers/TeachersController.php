@@ -134,7 +134,9 @@ class TeachersController extends AppBaseController
             $data['phone']=$request->phone;
             $data['email']=$request->email;
             $data['role_id']='2';
-            $data['password']=Hash::make($request->password);
+            if ( $request->has('password')  ) {
+                $data['password'] = Hash::make($request->password);
+            }
             $data = $this->usersRepository->update($data, $id);
           //  $users = $this->usersRepository->update($request->all(), $id);
             Flash::success('Teachers updated successfully.');

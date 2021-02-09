@@ -12,6 +12,7 @@
                 <div class="row" style="padding-left: 20px">
                     @include('teachers.show_fields')
                     <a href="{{ route('teachers.index') }}" class="btn btn-default">Back</a>
+                    <button class="btn btn-warning" onclick="window.location='{{ url("messages/"."{$teachers->id}") }}'"> Send Message</button>
                 </div>
             </div>
         </div>

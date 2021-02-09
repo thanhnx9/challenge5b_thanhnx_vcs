@@ -6,12 +6,13 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-business-people-avatar-icon-user-profile-free-vector-png-image_4815126.jpg" class="img-circle"
+{{--                <img src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-business-people-avatar-icon-user-profile-free-vector-png-image_4815126.jpg" class="img-circle"--}}
+                  <img src="{{Auth::user()->image}}"  class="img-circle">
                      alt="User Image"/>
             </div>
             <div class="pull-left info">
                 @if (Auth::guest())
-                <p>InfyOm</p>
+                <p>SMS</p>
                 @else
                     <p>{{ Auth::user()->name}}</p>
                 @endif

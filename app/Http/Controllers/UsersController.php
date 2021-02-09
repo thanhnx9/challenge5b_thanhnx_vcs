@@ -64,7 +64,6 @@ class UsersController extends AppBaseController
     public function store(CreateUsersRequest $request)
     {
 //        $input = $request->all();
-//
 //        $users = $this->usersRepository->create($input);
         $students['userName']=$request->userName;
         $students['name']=$request->name;
@@ -141,7 +140,9 @@ class UsersController extends AppBaseController
             $data['phone']=$request->phone;
             $data['email']=$request->email;
             $data['role_id']='3';
-            $data['password']=Hash::make($request->password);
+            if ( $request->has('password')  ) {
+                $data['password'] = Hash::make($request->password);
+            }
             $students = $this->usersRepository->update($data, $id);
             Flash::success('Users updated successfully.');
             return redirect(route('users.index'));
