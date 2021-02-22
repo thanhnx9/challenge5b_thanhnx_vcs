@@ -25,6 +25,9 @@
 {{--    <input type="text" class="form-control" name="password" >--}}
 {{--</div>--}}
 <div class="form-group col-sm-6">
+    <a href="{{ route('showchangePassword') }}">Change your password</a>
+</div>
+<div class="form-group col-sm-6">
     <button type="submit" class="btn btn-primary">Update</button>
-    <a href="{{ route('profile.index') }}" class="btn btn-default">Cancel</a>
+    <a href="{{ route('users.index') }}" class="btn btn-default">Cancel</a>
 </div>
