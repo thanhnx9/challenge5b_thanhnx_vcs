@@ -45,4 +45,7 @@ class MessagesRepository extends BaseRepository
         return Messages::where(['sender' => $name])->orderBy('created_at', 'asc')->get();
        // return Messages::where('sender',$name)->get();
     }
+    public function getReceivedMessage($name){
+        return Messages::where(['receiver' => $name])->orderBy('created_at', 'asc')->get();
+    }
 }

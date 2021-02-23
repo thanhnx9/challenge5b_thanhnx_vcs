@@ -41,13 +41,18 @@ class MessagesController extends Controller
                 ->with('messages', $messages);
         }
     }
-
+        public function showReceivedMessage()
+    {
+        $receiver=Auth::user()->userName;
+        $receivedmessages=$this->messagesRepository->getReceivedMessage($receiver);
+        if($receivedmessages!=null){
+            return view('messages.showReceivedMessage')
+                ->with('receivedmessages', $receivedmessages);
+        }
+    }
     public function store(Request $request,$receiver_id)
     {
         $requestAll = $request->all();
-//        //Chuc nang nhan tin.
-//        if(session('check')=='inbox')
-//        {
         $receiver_data= $this->usersRepository->getuserbyUserid($receiver_id);
         $dataInsert = array(
             'receiver' => $receiver_data->userName,
@@ -69,15 +74,7 @@ class MessagesController extends Controller
     }
     public function show($id)
     {
-//        $messages = $this->messagesRepository->find($id);
-//
-//        if (empty($messages)) {
-//            Flash::error('Messages not found');
-//
-//            return redirect(route('messages.index'));
-//        }
-//
-//        return view('messages.show')->with('messages', $messages);
+        //
     }
 
     public function edit($id)
@@ -124,7 +121,6 @@ class MessagesController extends Controller
         $this->messagesRepository->delete($id);
 
         Flash::success('Message deleted successfully! ✔');
-        //Session::flash('success', 'Message deleted successfully! ✔');
         return redirect()->back();
 
     }

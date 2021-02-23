@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="content-header">
-    <h1 class="pull-left">Sent Message</h1>
+    <h1 class="pull-left">Received Message</h1>
 
 </section>
 <div class="content">
@@ -11,7 +11,7 @@
     <div class="clearfix"></div>
     <div class="box box-primary">
         <div class="box-body">
-            @include('messages.sentmessagetable')
+            @include('messages.receivedmessagetable')
         </div>
     </div>
     <div class="text-center">

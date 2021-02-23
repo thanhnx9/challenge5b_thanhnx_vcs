@@ -39,6 +39,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('message/delete/{id}', 'App\Http\Controllers\MessagesController@destroy')->name('deleteMessage');
     Route::get('message/edit/{id}', 'App\Http\Controllers\MessagesController@edit')->name('editMessage');
     Route::post('message/updated/{id}', 'App\Http\Controllers\MessagesController@update')->name('updateMessage');
+     Route::get('inbox', 'App\Http\Controllers\MessagesController@showReceivedMessage')->name('inbox');
 
     /*******Task******/
     Route::get('tasks', 'App\Http\Controllers\TaskController@index')->name('tasks');
