@@ -20,6 +20,7 @@ class RolesRepository extends BaseRepository
         'role_name'
     ];
 
+    protected $primaryKey='role_id';
     /**
      * Return searchable fields
      *

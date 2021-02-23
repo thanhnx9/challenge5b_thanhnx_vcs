@@ -4,7 +4,7 @@
 </li>
 
 <!-- Teachers -->
-<li class="{{ Request::is('users*') ? 'active' : '' }}">
+<li class="{{ Request::is('teachers*') ? 'active' : '' }}">
     <a href="{{ route('teachers.index') }}"><i class="fa fa-user-circle"></i><span>Teachers</span></a>
 </li>
 
@@ -18,29 +18,29 @@
         </span>
     </a>
         <ul class="treeview-menu">
-            <li class="{{ Request::is('users*') ? 'active' : '' }}">
+            <li class="{{ Request::is('outbox*') ? 'active' : '' }}">
                  <a href="{{route('outbox')}}"><i class="fa fa-paper-plane"></i><span>Sent Messages</span></a>
             </li>
-            <li class="{{ Request::is('users*') ? 'active' : '' }}">
+            <li class="{{ Request::is('inbox*') ? 'active' : '' }}">
                  <a href="{{route('inbox')}}"><i class="fa fa-envelope-o"></i><span>Received Messages</span></a>
             </li>
         </ul>
 </li>
 
 <!-- Exams -->
-<li class="{{ Request::is('user*') ? 'active' : '' }}">
+<li class="{{ Request::is('exams*') ? 'active' : '' }}">
     <a href="{{route('tasks')}}"><i class="fa fa-file"></i><span>Exams</span></a>
 </li>
 
 <!-- Solution -->
 @if(Auth::user()->role_id<3)
-<li class="{{ Request::is('user*') ? 'active' : '' }}">
+<li class="{{ Request::is('solutions*') ? 'active' : '' }}">
     <a href="{{route('solutions')}}"><i class="fa fa-file-o"></i><span>Solution</span></a>
 </li>
 @endif
 
 <!-- Challenges -->
-<li class="{{ Request::is('user*') ? 'active' : '' }}">
+<li class="{{ Request::is('challenges*') ? 'active' : '' }}">
     <a href="{{route('challenges')}}"><i class="fa fa-gamepad"></i><span>Challenges</span></a>
 </li>
 

@@ -17,7 +17,11 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         DB::table('users')->delete();
+        DB::table('roles')->delete();
+    
         $this->createNewUsers();
+
+        $this->createNewRoles();
     }
 
     protected function createNewUsers()
@@ -69,5 +73,23 @@ class DatabaseSeeder extends Seeder
             ],
         ];
         DB::table('users')->insert($d);
+    }
+     protected function createNewRoles()
+    {
+    
+        $d = [
+
+            ['role_name' => 'admin',
+                'created_at' => now(),
+            ],
+             ['role_name' => 'teacher',
+                'created_at' => now(),
+            ],
+             ['role_name' => 'student',
+                'created_at' => now(),
+            ],
+            
+        ];
+        DB::table('roles')->insert($d);
     }
 }
