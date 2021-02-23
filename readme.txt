@@ -9,3 +9,6 @@ php artisan key:generate
 
 +) migrate database:
 php artisan migrate:fresh --seed
+
+
+php artisan storage:link
