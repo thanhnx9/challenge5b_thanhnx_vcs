@@ -7,15 +7,17 @@
         <div class="box box-primary">
             <div class="box-body">
                 <div class="container" style="margin-left: 20px; margin-bottom: 15px">
-                    <h1>Congratulation!!! This is key....</h1>
+                    <h1>Congratulation!!! This is key:</h1>
                     {{--       {!! Form::open(['route' => ['messages.store']]) !!}--}}
+                    
                     <form  name="content">
                         @csrf
-                       {{$content}}
+                       <i>{{$content}}</i>
                     </form>
+                    
                 </div>
                 <div class="modal-footer">
-                    <a href="{{route('challenges')}}" type="button" class="btn btn-warning" data-dismiss="modal" >Cancel</a>
+                    <a href="{{route('challenges')}}" type="button" class="btn btn-warning" data-dismiss="modal" >Back</a>
                 </div>
             </div>
         </div>

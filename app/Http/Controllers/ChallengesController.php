@@ -43,6 +43,7 @@ class ChallengesController extends Controller
             //check file exist and move file
             if (! File::exists($dir))
             {
+               
                 $file->move($dir, $fileName);
                 $data['name']=$request->name;
                 $data['filename']=$folder;

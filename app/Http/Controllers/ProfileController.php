@@ -89,8 +89,8 @@ class ProfileController extends Controller
         if ( $request->hasFile('image')  ) {
             $avatar = $request->image;
             $avatar_new_name = time().$avatar->getClientOriginalName();
-            $avatar->move('uploads/avatar/',$avatar_new_name);
-            $data['image'] = 'uploads/avatar/'.$avatar_new_name;
+            $avatar->storeAs('public/uploads/avatar/',$avatar_new_name);
+            $data['image'] =  asset('storage/uploads/avatar/'.$avatar_new_name);
         }
         $this->usersRepository->update($data, $id);
         Flash::success('Profile updated successfully.');

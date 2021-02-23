@@ -20,6 +20,7 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
+    
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     /******************Change password**********************/
     Route::get('/changePassword', 'App\Http\Controllers\Auth\ChangePassword@showChangePasswordForm')->name('showchangePassword');
