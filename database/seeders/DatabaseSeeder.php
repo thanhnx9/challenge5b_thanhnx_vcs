@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
-use Illuminate\Support\Facades\DB; 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 class DatabaseSeeder extends Seeder
 {
@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         DB::table('users')->delete();
         DB::table('roles')->delete();
-    
+
         $this->createNewUsers();
 
         $this->createNewRoles();
@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
         $d = [
 
             ['name' => 'Adminitrator',
-                'email' => 'admin@admin.com',
+                'email' => 'babyzskarkk@gmail.com',
                 'userName' => 'admin',
                 'password' => $password,
                 'role_id' => '1',    //admin
@@ -76,7 +76,7 @@ class DatabaseSeeder extends Seeder
     }
      protected function createNewRoles()
     {
-    
+
         $d = [
 
             ['role_name' => 'admin',
@@ -88,7 +88,7 @@ class DatabaseSeeder extends Seeder
              ['role_name' => 'student',
                 'created_at' => now(),
             ],
-            
+
         ];
         DB::table('roles')->insert($d);
     }

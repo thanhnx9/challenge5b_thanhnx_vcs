@@ -17,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get ('/auth/facebook', 'App\Http\Controllers\socialController@redirect');
+Route::get ('/auth/facebook/callback', 'App\Http\Controllers\socialController@callback');
+
 Auth::routes();
 
 Route::get('/complete-registration', 'App\Http\Controllers\Auth\RegisterController@completeRegistration');
@@ -25,7 +29,7 @@ Route::post('/2fa', function () {
     return redirect('home');
 })->name('2fa')->middleware('2fa');
 
-Route::get('/re-authenticate', 'HomeController@reauthenticate');
+Route::get('/re-authenticate', 'App\Http\Controllers\HomeController@reauthenticate');
 
 Route::middleware(['auth','2fa'])->group(function () {
 

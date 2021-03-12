@@ -123,6 +123,8 @@
       <path value="$PROJECT_DIR$/vendor/pragmarx/google2fa-qrcode" />
       <path value="$PROJECT_DIR$/vendor/michaeldzjap/twofactor-auth" />
       <path value="$PROJECT_DIR$/vendor/calcinai/php-imagick" />
+      <path value="$PROJECT_DIR$/vendor/laravel/socialite" />
+      <path value="$PROJECT_DIR$/vendor/league/oauth1-client" />
     </include_path>
   </component>
   <component name="PhpUnit">

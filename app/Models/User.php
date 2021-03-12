@@ -27,7 +27,8 @@ class User extends Authenticatable
         'email_verified_at',
         'password',
         'remember_token',
-        'google2fa_secret'
+        'google2fa_secret',
+        'fb_id',
     ];
 
     /**

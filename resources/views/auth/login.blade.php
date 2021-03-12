@@ -78,6 +78,10 @@
                     <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
                 </div>
                 <!-- /.col -->
+                <hr>
+                    <div class="col-md-8 offset-md-4">
+                        <a href="{{ url('/auth/facebook') }}" class="btn btn-primary"><i class="fa fa-facebook"></i>  Login with Facebook</a>
+                    </div>
             </div>
         </form>
 

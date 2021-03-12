@@ -67,7 +67,8 @@ class Users extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'string',
         'remember_token' => 'string',
-        'google2fa_secret'=>'string'
+        'google2fa_secret'=>'string',
+        'fb_id' =>'string'
     ];
 
     /**
@@ -88,7 +89,8 @@ class Users extends Authenticatable
         'deleted_at' => 'nullable',
         'created_at' => 'nullable',
         'updated_at' => 'nullable',
-        'google2fa_secret'=>'nullable'
+        'google2fa_secret'=>'nullable',
+        'fb_id' =>'nullable'
     ];
 //    public function setGoogle2faSecretAttribute($value)
 //    {
