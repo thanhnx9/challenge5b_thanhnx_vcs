@@ -17,16 +17,25 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
 Auth::routes();
-Route::group(['middleware' => 'auth'], function () {
-    
+
+Route::get('/complete-registration', 'App\Http\Controllers\Auth\RegisterController@completeRegistration');
+
+Route::post('/2fa', function () {
+    return redirect('home');
+})->name('2fa')->middleware('2fa');
+
+Route::get('/re-authenticate', 'HomeController@reauthenticate');
+
+Route::middleware(['auth','2fa'])->group(function () {
+
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     /******************Change password**********************/
     Route::get('/changePassword', 'App\Http\Controllers\Auth\ChangePassword@showChangePasswordForm')->name('showchangePassword');
     Route::post('/changePassword','App\Http\Controllers\Auth\ChangePassword@changePassword')->name('changePassword');
     /***********************************************************/
 
+    /**********************************************/
     Route::resource('users', App\Http\Controllers\UsersController::class);
     Route::resource('profile', App\Http\Controllers\ProfileController::class);
     Route::resource('teachers', App\Http\Controllers\TeachersController::class);

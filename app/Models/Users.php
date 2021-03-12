@@ -47,7 +47,8 @@ class Users extends Authenticatable
         'role_id',
         'email_verified_at',
         'password',
-        'remember_token'
+        'remember_token',
+        'google2fa_secret'
     ];
 
     /**
@@ -65,7 +66,8 @@ class Users extends Authenticatable
         'role_id' => 'integer',
         'email_verified_at' => 'datetime',
         'password' => 'string',
-        'remember_token' => 'string'
+        'remember_token' => 'string',
+        'google2fa_secret'=>'string'
     ];
 
     /**
@@ -85,8 +87,19 @@ class Users extends Authenticatable
         'remember_token' => 'nullable|string|max:100',
         'deleted_at' => 'nullable',
         'created_at' => 'nullable',
-        'updated_at' => 'nullable'
+        'updated_at' => 'nullable',
+        'google2fa_secret'=>'nullable'
     ];
+//    public function setGoogle2faSecretAttribute($value)
+//    {
+//        $this->attributes['google2fa_secret'] = encrypt($value);
+//    }
+//
+//
+//    public function getGoogle2faSecretAttribute($value)
+//    {
+//        return decrypt($value);
+//    }
 
 
 }

@@ -116,6 +116,13 @@
       <path value="$PROJECT_DIR$/vendor/infyomlabs/laravel-generator" />
       <path value="$PROJECT_DIR$/vendor/infyomlabs/adminlte-templates" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/vendor/bacon/bacon-qr-code" />
+      <path value="$PROJECT_DIR$/vendor/pragmarx/google2fa" />
+      <path value="$PROJECT_DIR$/vendor/pragmarx/google2fa-laravel" />
+      <path value="$PROJECT_DIR$/vendor/pragmarx/google2fa-qrcode" />
+      <path value="$PROJECT_DIR$/vendor/michaeldzjap/twofactor-auth" />
+      <path value="$PROJECT_DIR$/vendor/calcinai/php-imagick" />
     </include_path>
   </component>
   <component name="PhpUnit">

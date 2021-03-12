@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+
     use HasFactory, Notifiable;
 
     /**
@@ -25,7 +26,8 @@ class User extends Authenticatable
         'role_id',
         'email_verified_at',
         'password',
-        'remember_token'
+        'remember_token',
+        'google2fa_secret'
     ];
 
     /**
@@ -36,6 +38,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'google2fa_secret',
     ];
 
     /**
@@ -50,4 +53,16 @@ class User extends Authenticatable
     public function roles(){
         return $this->belongsTo(Roles::class);
     }
+//    public function setGoogle2faSecretAttribute($value)
+//    {
+//        $this->attributes['google2fa_secret'] = encrypt($value);
+//    }
+//
+//
+//    public function getGoogle2faSecretAttribute($value)
+//    {
+//        return decrypt($value);
+//    }
+
+
 }

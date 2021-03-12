@@ -10,6 +10,8 @@
 
     "require": {
         "php": "^7.3|^8.0",
+        "bacon/bacon-qr-code": "~1.0.3",
+        "calcinai/php-imagick": "^0.1.2",
         "doctrine/dbal": "~2.3",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
@@ -19,7 +21,9 @@
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
         "laravel/ui": "3.0",
-        "laravelcollective/html": "^6.2"
+        "laravelcollective/html": "^6.2",
+        "michaeldzjap/twofactor-auth": "^3.1",
+        "pragmarx/google2fa-laravel": "^1.4"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
